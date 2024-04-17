@@ -26,8 +26,9 @@ jobs:
       - name: Run CodeScene Analysis
         run: |
           docker run \
-            -v $(pwd):/app \
+            -v /github/workspace:/app \
             codescene-analysis analyze --config codescene.yaml --token S_NYpqdEUimo6yice90UhGYt4NmOr4CvxZ2fULoFUpk.C3oeAHoGjisKbrzBzbG3pZve1aXZkDBRQafvftjpYqE
+            
       - name: Build Docker image
         run: |
           docker build -t my-javaapp .

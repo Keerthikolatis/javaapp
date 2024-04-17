@@ -41,10 +41,10 @@ jobs:
       - name: Run CodeScene Analysis
         run: |
           docker run \
-            -v /home/runner/work/javaapp/javaapp:/app \
+            -v ${{ github.workspace }}:/app \
             -e CODESCENE_API_TOKEN=S_NYpqdEUimo6yice90UhGYt4NmOr4CvxZ2fULoFUpk.C3oeAHoGjisKbrzBzbG3pZve1aXZkDBRQafvftjpYqE \
             keerthikolati/codescene-analysis:latest \
-            analyze --config /app/app/codescene.yaml
+            analyze --config /app/codescene.yaml
  
         env:
           CODESCENE_API_TOKEN: S_NYpqdEUimo6yice90UhGYt4NmOr4CvxZ2fULoFUpk.C3oeAHoGjisKbrzBzbG3pZve1aXZkDBRQafvftjpYqE

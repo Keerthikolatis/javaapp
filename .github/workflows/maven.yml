@@ -36,10 +36,10 @@ jobs:
  
       - name: Push Docker image to registry
         run: docker push keerthikolati/codescene-analysis:latest
- 
+  
       - name: Run CodeScene Analysis
         run: |
           docker run \
             -v /github/workspace:/app \
             keerthikolati/codescene-analysis:latest \
-            analyze --config codescene.yaml --token S_NYpqdEUimo6yice90UhGYt4NmOr4CvxZ2fULoFUpk.C3oeAHoGjisKbrzBzbG3pZve1aXZkDBRQafvftjpYqE
+            analyze --config /app/codescene.yaml --token S_NYpqdEUimo6yice90UhGYt4NmOr4CvxZ2fULoFUpk.C3oeAHoGjisKbrzBzbG3pZve1aXZkDBRQafvftjpYqE

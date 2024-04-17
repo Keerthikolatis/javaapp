@@ -41,11 +41,11 @@ jobs:
       - name: Run CodeScene Analysis
         run: |
           docker run \
-            -v ${{ github.workspace }}:/app \
+            -v ${{ github.workspace }}/src:/app/src \
+            -v ${{ github.workspace }}/app:/app/app \
             -e CODESCENE_API_TOKEN=S_NYpqdEUimo6yice90UhGYt4NmOr4CvxZ2fULoFUpk.C3oeAHoGjisKbrzBzbG3pZve1aXZkDBRQafvftjpYqE \
             keerthikolati/codescene-analysis:latest \
-            analyze --config /app/codescene.yaml
+            analyze --config /app/app/codescene.yaml
  
         env:
           CODESCENE_API_TOKEN: S_NYpqdEUimo6yice90UhGYt4NmOr4CvxZ2fULoFUpk.C3oeAHoGjisKbrzBzbG3pZve1aXZkDBRQafvftjpYqE
-          

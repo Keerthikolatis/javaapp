@@ -32,11 +32,11 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t codescene-analysis .
-          #docker tag my-javaapp keerthikolati/my-javaapp:latest
+          docker tag codescene-analysis keerthikolati/codescene-analysis:latest
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: keerthikolati
           password: dckr_pat_WNAC2pxJKswhxkJ-Pm1sDgPH4U0
       - name: Push Docker image to registry
-        run: docker push codescene-analysis
+        run: docker push codescene-analysis:latest

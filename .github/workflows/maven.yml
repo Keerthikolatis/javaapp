@@ -31,12 +31,12 @@ jobs:
             
       - name: Build Docker image
         run: |
-          docker build -t my-javaapp .
-          docker tag my-javaapp keerthikolati/my-javaapp:latest
+          docker build -t codescene-analysis .
+          #docker tag my-javaapp keerthikolati/my-javaapp:latest
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: keerthikolati
           password: dckr_pat_WNAC2pxJKswhxkJ-Pm1sDgPH4U0
       - name: Push Docker image to registry
-        run: docker push keerthikolati/my-javaapp:latest
+        run: docker push codescene-analysis

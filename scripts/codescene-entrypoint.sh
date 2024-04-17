@@ -1,3 +1,7 @@
-#!/bin/sh 
+#!/bin/bash
+ 
 # Run CodeScene analysis
-codescene analyze --config codescene.yaml --token S_NYpqdEUimo6yice90UhGYt4NmOr4CvxZ2fULoFUpk.C3oeAHoGjisKbrzBzbG3pZve1aXZkDBRQafvftjpYqE
+codescene analyze --config /app/codescene.yaml --token $CODESCENE_API_TOKEN
+ 
+# Start the Java application
+java -jar /app/app.jar

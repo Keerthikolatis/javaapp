@@ -27,13 +27,13 @@ jobs:
         run: |
           docker run \
             -v /github/workspace:/app \
-            codescene-analysis:latest \
+            keerthikolati/codescene-analysis:latest \
             analyze --config codescene.yaml --token S_NYpqdEUimo6yice90UhGYt4NmOr4CvxZ2fULoFUpk.C3oeAHoGjisKbrzBzbG3pZve1aXZkDBRQafvftjpYqE
             
       - name: Build Docker image
         run: |
           docker build -t keerthikolati/codescene-analysis:latest .
-          docker tag codescene-analysis keerthikolati/codescene-analysis:latest
+          #docker tag codescene-analysis keerthikolati/codescene-analysis:latest
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
